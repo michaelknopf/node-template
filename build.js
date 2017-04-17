@@ -1,9 +1,9 @@
 var webpack = require('webpack');
-var config = require('../webpack/webpack.config.js');
+var config = require('./webpack.config.js');
 
-console.log('hello node', __dirname)
-
-var compiler = webpack(config, function(err, stats) {
+webpack(config).watch({
+}, function(err, stats) {
+    console.log('Build complete.')
     if (err) {
         console.log('Error: ', err)
     }
@@ -21,4 +21,3 @@ var compiler = webpack(config, function(err, stats) {
         })
     }
 });
-require('./bundle.js');
